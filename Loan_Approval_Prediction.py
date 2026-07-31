@@ -154,3 +154,16 @@ plt.xlabel("Annual Income")
 plt.ylabel("Frequency")
 
 plt.show()
+
+
+
+#Feature Importance
+coef = pd.Series(logisticRegression.coef_[0], index=X.columns)
+
+coef = coef.sort_values()
+
+plt.figure(figsize=(14,8))
+coef.plot(kind='barh')
+plt.title("Feature Importance (Logistic Regression Coefficients)")
+plt.xlabel("Coefficient Value")
+plt.show()
